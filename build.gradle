@@ -68,10 +68,10 @@ tasks.named('test') {
 //    }
 //}
 
-compileJava {
-    options.compilerArgs << '-s'
-    options.compilerArgs << queryDslOutput.absolutePath
-    doFirst {
-        queryDslOutput.mkdirs();
-    }
-}
+//compileJava {
+//    options.compilerArgs << '-s'
+//    options.compilerArgs << queryDslOutput.absolutePath
+//    doFirst {
+//        queryDslOutput.mkdirs();
+//    }
+//}
