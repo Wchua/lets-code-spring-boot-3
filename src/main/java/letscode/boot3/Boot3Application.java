@@ -3,6 +3,7 @@ package letscode.boot3;
 
 import letscode.boot3.customers.Customer;
 import letscode.boot3.customers.CustomerRepository;
+import letscode.boot3.customers.QCustomer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,7 +29,7 @@ public class Boot3Application {
         return event -> {
             repository.deleteAll();
             Set.of("A", "B", "C", "D").forEach(c -> repository.save(new Customer(null, c, Math.random() > .5)));
-            repository.findAll(letscode.boot3.customers.QCustomer.customer.name.startsWith("A").not())
+            repository.findAll(QCustomer.customer.name.startsWith("A").not())
                   .forEach(System.out::println);
         };
     }
